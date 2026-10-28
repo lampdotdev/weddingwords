@@ -1,6 +1,6 @@
 {
-  "subject": "two champagne glasses touching, with golden wine",
-  "symbol": "wineglass.fill",
-  "background": "red",
-  "tint": "#FFF1D6"
+  "background" : "red",
+  "subject" : "two champagne glasses touching, with golden wine",
+  "symbol" : "wineglass.fill",
+  "tint" : "#FFF1D6"
 }
