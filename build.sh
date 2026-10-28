@@ -301,7 +301,7 @@ cat > "$APP/Contents/Info.plist" <<PLIST
 <plist version="1.0"><dict>
   <key>CFBundleDevelopmentRegion</key><string>en</string>
   <key>CFBundleExecutable</key><string>WeddingWords</string>
-  <key>CFBundleIdentifier</key><string>dev.lamp.dev.pensive-curie-69cf17.app.weddingwords</string>
+  <key>CFBundleIdentifier</key><string>dev.lamp.dev.app.weddingwords</string>
   <key>CFBundleName</key><string>Wedding Words</string>
   <key>CFBundleDisplayName</key><string>Wedding Words</string>
   <key>CFBundlePackageType</key><string>APPL</string>
@@ -325,6 +325,6 @@ cat > "$APP/Contents/Info.plist" <<PLIST
   <key>NSAppleMusicUsageDescription</key><string>Wedding Words plays music from your library.</string>
 </dict></plist>
 PLIST
-intents WeddingWords "$APP" "dev.lamp.dev.pensive-curie-69cf17.app.weddingwords" Sources
+intents WeddingWords "$APP" "dev.lamp.dev.app.weddingwords" Sources
 codesign --force -s - "$APP"
 echo "Built $APP"
