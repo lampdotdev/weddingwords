@@ -1,0 +1,12 @@
+{
+  "remixOf" : [
+    {
+      "name" : "Wedding Words",
+      "starter" : "weddingwords",
+      "url" : "https://github.com/RooCodeInc/lamp-starter-weddingwords"
+    }
+  ],
+  "upstream" : [
+
+  ]
+}
