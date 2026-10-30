@@ -27,6 +27,15 @@ import Speech
         utterance.rate = slow ? 0.36 : 0.46
         currentUtterance = utterance
         speaking = true
+        // A reel's take hears her from a file, not the speakers.
+        if LampShowcase.isOn {
+            Task { @MainActor in
+                await LampShowcase.speak(utterance)
+                guard currentUtterance === utterance else { return }
+                currentUtterance = nil; speaking = false
+            }
+            return
+        }
         synth.speak(utterance)
     }
     func stopPlayback() {
@@ -60,6 +69,13 @@ import Speech
     }
     func start() async {
         guard !starting, !speaking else { return }
+        // A reel's take: the person's next line from its script, word by word as it would be recognized.
+        if LampShowcase.isOn {
+            transcript = ""; listening = true
+            _ = await LampShowcase.hear { transcript = $0 }
+            listening = false
+            return
+        }
         starting = true
         defer { starting = false }
         error = ""
